@@ -47,4 +47,53 @@ dados_simples
 
 # Ver o banco todo (Não recomendável para bancos gigantescos) ------------------------------------------------------------------------------
 
+View(dados_simples)
 
+# Ver as n primeiras linhas do data.frame --------------------------------------------------------------------------------------------------
+
+head(dados_simples, 2)
+
+# Frequência acumulada ---------------------------------------------------------------------------------------------------------------------
+
+frequencia_acumulada = cumsum(frequencia_simples)
+
+frequencia_acumulada
+
+# Adicionando coluna com acumulada ---------------------------------------------------------------------------------------------------------
+
+dados_simples$frequencia_acumulada = frequencia_acumulada
+
+View(dados_simples)
+
+# Frequência relativa simples --------------------------------------------------------------------------------------------------------------
+
+frequencia_relativa_simples = frequencia_simples / sum(frequencia_simples)
+
+frequencia_relativa_simples
+
+# segunda forma para obter frequencias relativa simples utilizando a função prop.table() ---------------------------------------------------
+
+prop.table(frequencia_simples)
+
+# Adicionando a Frequência relativa simples a tabela ------------------------------------------------------------------------------------------------
+
+dados_simples$frequencia_relativa_simples = frequencia_relativa_simples
+
+# Frequência relativa acumulada ------------------------------------------------------------------------------------------------------------
+
+frequencia_relativa_acumulada = frequencia_acumulada / sum(frequencia_simples)
+
+# Frequência relativa acumulada (Segunda forma) ---------------------------------------------------------------------------------------------
+
+frequencia_relativa_acumulada = cumsum(frequencia_relativa_simples)
+
+# Criando a variavel frequencia_relativa_acumulada -----------------------------------------------------------------------------------------
+
+dados_simples$frequencia_relativa_acumulada = frequencia_relativa_acumulada
+
+View(dados_simples)
+
+# Renomeando uma coluna do dataframe dados_simples -----------------------------------------------------------------------------------------
+
+names(dados_simples)[5] = "Frequencia Relativa Acumulada"
+tibble::tibble(dados_simples)
