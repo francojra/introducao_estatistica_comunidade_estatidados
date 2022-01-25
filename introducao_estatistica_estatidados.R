@@ -97,3 +97,14 @@ View(dados_simples)
 
 names(dados_simples)[5] = "Frequencia Relativa Acumulada"
 tibble::tibble(dados_simples)
+
+# Colocando na ótica tidyverse -------------------------------------------------------------------------------------------------------------
+
+dados_simples_tidy = dados_simples %>%
+  mutate(
+    frequencia_acumulada = cumsum(Freq),
+    frequencia_relativa_simples = Freq / sum(Freq),
+    frequencia_relativa_acumulada = cumsum(frequencia_relativa_simples)
+  )
+
+tibble(dados_simples_tidy)
