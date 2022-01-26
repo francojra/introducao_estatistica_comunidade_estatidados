@@ -156,3 +156,27 @@ cbind(media_a,mediana_a,moda_a)
 summary(a)
 
 Hmisc::describe(a)
+
+# Comparando Graficamente ------------------------------------------------------------------------------------------------------------------
+
+# Divisão de janelas
+par(mfrow = c(1, 2))
+
+# Histograma com as frequências simples
+hist(a)
+
+# Histograma com as densidades
+hist(a, probability = T)
+
+# Curva de densidade
+lines(density(a))
+
+# Assimetria e Curtose ---------------------------------------------------------------------------------------------------------------------
+
+# Coeficiente de assimetria de pearson
+assimetria_a = skewness(a)
+
+# Coeficiente de curtose de pearson
+curtose_a=kurtosis(a)
+
+cbind(assimetria_a,curtose_a)
