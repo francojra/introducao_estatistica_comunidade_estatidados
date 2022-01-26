@@ -180,3 +180,15 @@ assimetria_a = skewness(a)
 curtose_a=kurtosis(a)
 
 cbind(assimetria_a,curtose_a)
+
+# Consolidando as Estatísticas resumo ------------------------------------------------------------------------------------------------------
+
+dados_a_consolidados = data.frame(
+  "moda" = moda_a,
+  "mediana" = mediana_a,
+  "media" = media_a,
+  "assimetria" = assimetria_a,
+  "curtose" = curtose_a
+)
+
+dados_a_consolidados 
