@@ -252,3 +252,55 @@ dados_b_consolidados
 # Amostra Empresa C ------------------------------------------------------------------------------------------------------------------------
 
 c = c(2000,3000,4000,6000, 7000, 7000, 8000,  9000)
+
+# Média, mediana, moda e Resumos empresa C -------------------------------------------------------------------------------------------------
+
+media_c = mean(c)
+
+mediana_c = median(c)
+
+moda_c = DescTools::Mode(c)
+
+cbind(media_c,mediana_c,moda_c)
+
+# Resumos gerais empresa C -----------------------------------------------------------------------------------------------------------------
+
+summary(c)
+
+Hmisc::describe(c)
+
+# Comparando Graficamente ------------------------------------------------------------------------------------------------------------------
+
+# Divisão de janelas
+par(mfrow = c(1, 2))
+
+# Histograma com as frequências simples
+hist(c)
+
+# Histograma com as densidades
+hist(c, probability = T)
+
+# Curva de densidade
+lines(density(c))
+
+# Assimetria e Curtose ---------------------------------------------------------------------------------------------------------------------
+
+#Coeficiente de assimetria de pearson
+assimetria_c = skewness(c)
+
+#Coeficiente de curtose de pearson
+curtose_c = kurtosis(c)
+
+cbind(assimetria_c,curtose_c)
+
+# Consolidando as Estatísticas resumo ------------------------------------------------------------------------------------------------------
+
+dados_c_consolidados = data.frame(
+  "moda" = moda_c,
+  "mediana" = mediana_c,
+  "media" = media_c,
+  "assimetria" = assimetria_c,
+  "curtose" = curtose_c
+)
+
+dados_c_consolidados
