@@ -153,4 +153,6 @@ cbind(media_a,mediana_a,moda_a)
 
 # Resumos gerais empresa A -----------------------------------------------------------------------------------------------------------------
 
+summary(a)
 
+Hmisc::describe(a)
