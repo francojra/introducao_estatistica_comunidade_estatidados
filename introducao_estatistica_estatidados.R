@@ -140,3 +140,17 @@ desvio3 = 4000 - 4500
 desvio4 = 9000 - 4500
 soma_desvios_media = sum(desvio1, desvio2, desvio3, desvio4)
 soma_desvios_media
+
+# Média, mediana, moda e Resumos empresa A -------------------------------------------------------------------------------------------------
+
+media_a = mean(a)
+
+mediana_a = median(a)
+
+moda_a = DescTools::Mode(a)
+
+cbind(media_a,mediana_a,moda_a)
+
+# Resumos gerais empresa A -----------------------------------------------------------------------------------------------------------------
+
+
