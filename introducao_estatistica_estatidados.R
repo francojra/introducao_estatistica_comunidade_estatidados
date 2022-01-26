@@ -359,3 +359,16 @@ consolidado_empresas
 colnames(consolidado_empresas) = c("resumo_empresa_a","resumo_empresa_b","resumo_empresa_c")
 rownames(consolidado_empresas) = c("Moda","Mediana","Media","Assimetria","Curtose")
 consolidado_empresas
+
+# Exemplo JPMORGAN -------------------------------------------------------------------------------------------------------------------------
+
+mediana_jpmorgan_exemplo = c(16,18,19,20,21,23,28,30,32,33,33,47)
+
+# Quantidade de elementos
+length(mediana_jpmorgan_exemplo)
+
+# média
+mean(mediana_jpmorgan_exemplo)
+
+#mediana
+median(mediana_jpmorgan_exemplo)
