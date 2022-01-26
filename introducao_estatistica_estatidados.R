@@ -474,6 +474,7 @@ consolidado_comparativo
 par(mfrow = c(1,2))
 
 # Comparação
+
 plot(a0, col = iris$Species)
 abline(h = mean(a0))
 abline(h = mean(a0) - 2*sd0)
@@ -483,3 +484,7 @@ plot(a1, col = iris$Species)
 abline(h = mean(a1))
 abline(h = mean(a1) - 1.5*sd1)
 abline(h = mean(a1) + 1.5*sd1)
+
+# Ótica Tidyverse --------------------------------------------------------------------------------------------------------------------------
+
+
