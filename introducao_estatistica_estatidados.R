@@ -487,4 +487,27 @@ abline(h = mean(a1) + 1.5*sd1)
 
 # Ótica Tidyverse --------------------------------------------------------------------------------------------------------------------------
 
+# Dados sepalas consolidado ----------------------------------------------------------------------------------------------------------------
+
+library(dplyr)
+
+dados_sepala = iris %>% 
+  summarise( media0 = mean(Sepal.Length),
+                                   h0 = diff(range(Sepal.Length)),
+                                   var0 = var(Sepal.Length),
+                                   sd0 = sd(Sepal.Length),
+                                   cv0 = sd0/media0*100
+                                   )
+dados_sepala
+
+# Dados petalas consolidado ----------------------------------------------------------------------------------------------------------------
+
+dados_petala = iris %>% 
+  summarise( media1 = mean(Petal.Length),
+                                   h1 = diff(range(Sepal.Length)),
+                                   var1 = var(Petal.Length),
+                                   sd1 = sd(Petal.Length),
+                                   cv1 = sd1/media1*100
+)
+dados_petala
 
