@@ -118,3 +118,25 @@ dados_simples_tidy_ordenado
 # Exportando como banco de dados csv -------------------------------------------------------------------------------------------------------
 
 write.csv2(dados_simples_tidy, "coco1.csv", row.names = F) # Salva nova tabela
+
+# Evitando notação científica --------------------------------------------------------------------------------------------------------------
+
+options(scipen=999)
+
+# Instalando e carregando Biblioteca que calcula Moda, Assimetria e Curtose no R -----------------------------------------------------------
+
+#install.packages("e1071")
+require(e1071)
+#install.packages("DescTools")
+library(DescTools)
+library(Hmisc)
+
+# Amostra Empresa A ------------------------------------------------------------------------------------------------------------------------
+
+a = c(2000, 3000, 4000, 9000)
+desvio1 = 2000 - 4500
+desvio2 = 3000 - 4500
+desvio3 = 4000 - 4500
+desvio4 = 9000 - 4500
+soma_desvios_media = sum(desvio1, desvio2, desvio3, desvio4)
+soma_desvios_media
