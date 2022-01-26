@@ -21,10 +21,10 @@ lapply(vetor_pacotes,
        require, 
        character.only = TRUE)
 
-install.packages("emo")  # Caso seja necessário
-install.packages("vembedr")
-remotes::install_github("juba/rmdformats",force = TRUE)
-remotes::install_github("glin/reactable",force = TRUE)
+#install.packages("emo")  # Caso seja necessário
+#install.packages("vembedr")
+#remotes::install_github("juba/rmdformats",force = TRUE)
+#remotes::install_github("glin/reactable",force = TRUE)
 
 
 # Criando vetores --------------------------------------------------------------------------------------------------------------------------
@@ -108,3 +108,9 @@ dados_simples_tidy = dados_simples %>%
   )
 
 tibble(dados_simples_tidy)
+
+# Ordenando de forma decrescente pela idade utilizando a função arrange() ------------------------------------------------------------------
+
+dados_simples_tidy_ordenado = dados_simples_tidy %>% arrange(desc(Freq))
+
+dados_simples_tidy_ordenado
