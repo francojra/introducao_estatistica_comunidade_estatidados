@@ -304,3 +304,58 @@ dados_c_consolidados = data.frame(
 )
 
 dados_c_consolidados
+
+# Medidas de tendência central, assimetria e curtose (Ótica tidyverse) ---------------------------------------------------------------------
+
+#ÓTICA TIDYVERSE
+#install.packages("dplyr")
+library(dplyr)
+
+# Dados empresa A (Ótica tidyverse) --------------------------------------------------------------------------------------------------------
+
+# Empresa A
+
+a.df = data.frame(a)
+
+a.df_resumo = a.df %>% summarise(
+  moda_a = Mode(a),
+  mediana_a = median(a),
+  media_a = mean(a),
+  assimetria_a = skewness(a),
+  curtose_a = kurtosis(a)
+)
+
+# Empresa B
+
+b.df = data.frame(b)
+
+b.df_resumo = b.df %>% summarise(
+  moda_b = Mode(b),
+  mediana_b = median(b),
+  media_b = mean(b),
+  assimetria_b = skewness(b),
+  curtose_b = kurtosis(b)
+)
+
+# Empresa C
+
+c.df = data.frame(c)
+
+c.df_resumo = c.df %>% summarise(
+  moda_c = Mode(c),
+  mediana_c = median(c),
+  media_c = mean(c),
+  assimetria_c = skewness(c),
+  curtose_c = kurtosis(c)
+)
+
+# Concatenando -----------------------------------------------------------------------------------------------------------------------------
+
+# Transpor para concatenar colunas
+consolidado_empresas = data.frame(t(a.df_resumo),t(b.df_resumo),t(c.df_resumo))
+consolidado_empresas
+
+# Mudando nomes de linhas e colunas
+colnames(consolidado_empresas) = c("resumo_empresa_a","resumo_empresa_b","resumo_empresa_c")
+rownames(consolidado_empresas) = c("Moda","Mediana","Media","Assimetria","Curtose")
+consolidado_empresas
