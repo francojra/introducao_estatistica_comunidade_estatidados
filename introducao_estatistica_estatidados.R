@@ -114,3 +114,7 @@ tibble(dados_simples_tidy)
 dados_simples_tidy_ordenado = dados_simples_tidy %>% arrange(desc(Freq))
 
 dados_simples_tidy_ordenado
+
+# Exportando como banco de dados csv -------------------------------------------------------------------------------------------------------
+
+write.csv2(dados_simples_tidy, "coco1.csv", row.names = F) # Salva nova tabela
