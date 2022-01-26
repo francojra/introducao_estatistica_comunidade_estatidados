@@ -419,3 +419,67 @@ cv0 # Valores menores que 25% são considerados bons indicadores de homogeneidad
 
 a1 = iris$Petal.Length
 sort(a1) # Ordenação dos dados do maior para o menor
+
+# Amplitude amostral -----------------------------------------------------------------------------------------------------------------------
+
+h1 = diff(range(a1))
+
+h1
+
+# Amplitude amostral (Ótica tidyverse) -----------------------------------------------------------------------------------------------------
+
+library(dplyr)
+a1 %>% range() %>% diff() 
+
+# Variância amostral -----------------------------------------------------------------------------------------------------------------------
+
+var1 = var(a1)
+
+var1
+
+# Desvio padrão amostral -------------------------------------------------------------------------------------------------------------------
+
+sd1 = sd(a1)
+
+sd1
+
+# Média -2 desvios e +2desvios -------------------------------------------------------------------------------------------------------------
+
+mean(a1) - 2*sd1
+
+mean(a1) + 2*sd1
+
+# Coeficiente de variação amostral ---------------------------------------------------------------------------------------------------------
+
+cv1 = sd(a1)/mean(a1)*100
+
+cv1
+
+# Consolidando e comparando ----------------------------------------------------------------------------------------------------------------
+
+dados_a0_consolidados = data.frame("amplitude" = h0,"variancia" = var0,"desvio_padrao" = sd0,
+                                 "media" = mean(a0),"coeficente_variacao" = cv0)
+
+dados_a1_consolidados = data.frame("amplitude" = h1,"variancia" = var1,"desvio_padrao" = sd1,
+                                 "media" = mean(a1),"coeficente_variacao" = cv1)
+
+consolidado_comparativo = data.frame(t(dados_a0_consolidados),t(dados_a1_consolidados))
+
+colnames(consolidado_comparativo) = c("resumo_tamanhho_Sepala","resumo_tamanhho_Petala")
+
+consolidado_comparativo
+
+# Comparando graficamente ------------------------------------------------------------------------------------------------------------------
+
+par(mfrow = c(1,2))
+
+# Comparação
+plot(a0, col = iris$Species)
+abline(h = mean(a0))
+abline(h = mean(a0) - 2*sd0)
+abline(h = mean(a0) + 2*sd0)
+
+plot(a1, col = iris$Species)
+abline(h = mean(a1))
+abline(h = mean(a1) - 1.5*sd1)
+abline(h = mean(a1) + 1.5*sd1)
