@@ -60,3 +60,35 @@
 - Coeficiente de assimetria de pearson;
 - Coeficiente de curtose de pearson.
 38. Consolidando as Estatísticas resumo;
+39. Medidas de tendência central, assimetria e curtose (Ótica tidyverse);
+40. Dados empresa A (Ótica tidyverse) 
+- Empresa A;
+- Empresa B;
+- Empresa C.
+41. Concatenando;
+- Transpor para concatenar colunas;
+- Mudando nomes de linhas e colunas.
+42. Exemplo JPMORGAN
+43. Medidas de Dispersão;
+44. Amostra0
+- Selecionando a amostra das Sépalas;
+- Contando a quantidade de elementos;
+- Ordenando os valores.
+45. Amplitude amostral;
+46. Variância amostral;
+47. Desvio padrão amostral;
+48. Média -2 desvios e +2 desvios;
+49. Coeficiente de variação amostral;
+50. Amostra 1;
+51. Amplitude amostral;
+52. Amplitude amostral (Ótica tidyverse);
+53. Variância amostral;
+54. Desvio padrão amostral;
+55. Média -2 desvios e +2desvios;
+56. Coeficiente de variação amostral;
+57. Consolidando e comparando;
+58. Comparando graficamente;
+59. Comparação;
+60. Ótica Tidyverse;
+61. Dados sepalas consolidado;
+62. Dados petalas consolidado.
